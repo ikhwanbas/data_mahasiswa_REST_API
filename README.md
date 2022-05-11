@@ -26,6 +26,7 @@ git clone [url] [foldername]
 ### 3. Create ENV file 
 - create new file in root => ".env"
 - input this in the file : <br/>
+PORT=[your poty]<br/>
 DB_USERNAME=[your database username]<br/>
 DB_PASSWORD=[your database password]<br/>
 DB_NAME=[your new database
