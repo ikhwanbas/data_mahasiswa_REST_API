@@ -8,6 +8,7 @@ import (
 	"nilai-mahasiswa/middlewares"
 	"os"
 
+	"github.com/joho/godotenv"
 	"github.com/julienschmidt/httprouter"
 )
 
