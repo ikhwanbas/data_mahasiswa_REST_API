@@ -6,6 +6,7 @@ import (
 	"net/http"
 	"nilai-mahasiswa/controllers"
 	"nilai-mahasiswa/middlewares"
+	"os"
 
 	"github.com/julienschmidt/httprouter"
 )
@@ -24,6 +25,12 @@ func main() {
 	// }
 
 	// fmt.Println("success")
+	err := godotenv.Load(".env")
+
+	if err != nil {
+		log.Fatalf("Error loading .env file")
+	}
+	port := os.Getenv("PORT")
 
 	router := httprouter.New()
 
@@ -32,6 +39,6 @@ func main() {
 	router.PUT("/mahasiswa/:id", middlewares.BasicAuth(controllers.UpdateMahasiswa))
 	router.DELETE("/mahasiswa/:id", middlewares.BasicAuth(controllers.DeleteMahasiswa))
 
-	fmt.Println("Server is Running at Port 8080")
-	log.Fatal(http.ListenAndServe(":8080", router))
+	fmt.Println("Server is Running at Port", port)
+	log.Fatal(http.ListenAndServe(":"+port, router))
 }
