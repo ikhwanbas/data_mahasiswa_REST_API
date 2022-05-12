@@ -5,6 +5,9 @@
 
 <h4 >This is a simple REST Api that created as a learning process using GO Language</h4>
 
+# ER Diagram
+<img height="300px" src="./ERDiagram.png">
+
 # Features
 1. GET all Data Mahasiswa
 2. POST Data Mahasiswa
